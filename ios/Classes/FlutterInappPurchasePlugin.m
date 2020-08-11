@@ -546,6 +546,7 @@
                 [requestedPayments removeObjectForKey:transaction.payment];
                 NSDictionary *err = [NSDictionary dictionaryWithObjectsAndKeys:
                                      @"SKPaymentTransactionStateFailed", @"debugMessage",
+                                     [NSNumber numberWithInt:(int)transaction.error.code], @"responseCode",
                                      [self standardErrorCode:(int)transaction.error.code], @"code",
                                      [self englishErrorCodeDescription:(int)transaction.error.code], @"message",
                                      nil
